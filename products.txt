@@ -3,18 +3,18 @@
     "id": 1,
     "title": "Primer Producto",
     "price": 99.9,
-    "thumbnail": "https://www.imgsource.com/img_primero.jpg"
+    "thumbnail": "https://www.imgsource.com/img_1ro.jpg"
   },
   {
     "id": 2,
-    "title": "Cuarto Producto",
+    "title": "Segundo Producto",
     "price": 147.7,
-    "thumbnail": "https://www.imgsource.com/img_cuarto.jpg"
+    "thumbnail": "https://www.imgsource.com/img_2do.jpg"
   },
   {
     "id": 3,
-    "title": "Primer Producto",
+    "title": "Tercer Producto",
     "price": 99.9,
-    "thumbnail": "https://www.imgsource.com/img_primero.jpg"
+    "thumbnail": "https://www.imgsource.com/img_3ro.jpg"
   }
 ]
