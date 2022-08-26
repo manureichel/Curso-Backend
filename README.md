@@ -1,32 +1,11 @@
 # Curso-Backend
 
-## Entrega: Manejo de Archivos
-Se escribe una clase contenedor con los siguientes métodos:
+## Entrega: Servidor con Express
 
-``` js
-save(Object): Number
-```
-Recibe un objeto, lo guarda en el archivo, devuelve el id asignado.
+Consigna:
+Realizar un proyecto de servidor basado en node.js que utilice el módulo express e implemente los siguientes endpoints en el puerto 8080:
+Ruta get '/productos' que devuelva un array con todos los productos disponibles en el servidor
+Ruta get '/productoRandom' que devuelva un producto elegido al azar entre todos los productos disponibles
+Incluir un archivo de texto 'productos.txt' y utilizar la clase Contenedor del desafío anterior para acceder a los datos persistidos del servidor.
 
-
-``` js
-getById(Number): Object
-```
-Recibe un id y devuelve el objeto con ese id, o null si no está.
-
-``` js
-getAll(): Object[] 
-```
-Devuelve un array con los objetos presentes en el archivo.
-
-``` js
-deleteById(Number): void
-```
-Elimina del archivo el objeto con el id buscado.
-
-``` js
-deleteAll(): void
-```
-Elimina todos los objetos presentes en el archivo.
-
-Además se realiza un test agregando productos y manipulando el archivo con los métodos que incorpora la clase. 
+Antes de iniciar el servidor, colocar en el archivo 'productos.txt' tres productos como en el ejemplo del desafío anterior.
