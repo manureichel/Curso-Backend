@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Ingreso de Productos</title>
+  </head>
+  <body>
+      <div class="container">  
+        <form id="contact" action="/api/productos" method="post" autocomplete="off">
+          <h3>Ingreso de Producto</h3>
+          <h4>Ingrese los datos de un nuevo producto</h4>
+          <fieldset>
+            <input name="title" placeholder="Nombre del Producto" type="text" tabindex="1" required autofocus>
+          </fieldset>
+          <fieldset>
+            <input name="price" placeholder="Precio" type="text" tabindex="2" required>
+          </fieldset>
+          <fieldset>
+            <input name="thumbnail" placeholder="Thumbnail" type="tel" tabindex="3" required>
+          </fieldset>
+          
+          <fieldset>
+            <button type="submit" >Enviar</button>
+          </fieldset>
+       
+      </div>
+  </body>
+</html>
+
+
+

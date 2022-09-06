@@ -1,23 +1,24 @@
 # Curso-Backend
 
-## Entrega: Servidor con Express
+## Entrega: API Restful
 
-#### Consigna:
-Realizar un proyecto de servidor basado en node.js que utilice el módulo express e implemente los siguientes endpoints en el puerto 8080:
-Ruta get '/productos' que devuelva un array con todos los productos disponibles en el servidor
-Ruta get '/productoRandom' que devuelva un producto elegido al azar entre todos los productos disponibles
-Incluir un archivo de texto 'productos.txt' y utilizar la clase Contenedor del desafío anterior para acceder a los datos persistidos del servidor.
+###Endpoints 
 
-Antes de iniciar el servidor, colocar en el archivo 'productos.txt' tres productos como en el ejemplo del desafío anterior.
+Se implementa una API Restful con los siguientes Endpoints:
 
-### Despliegue en Glitch
+* **GET** '/api/productos' -> devuelve todos los productos.
+* **GET** '/api/productos/:id' -> devuelve un producto según su id.
+* **POST** '/api/productos' -> recibe y agrega un producto, y lo devuelve con su id asignado.
+* **PUT** '/api/productos/:id' -> recibe y actualiza un producto según su id.
+* **DELETE** '/api/productos/:id' -> elimina un producto según su id.
 
-* Endpoint para obtener todos los productos:
+###Página para agregar productos
 
-https://express-server-manu.glitch.me/productos
+Además se puede acceder a una página para agregar un producto nuevo desde http://localhost:3000/
 
+### Iniciar el servidor
 
-* Endpoint para obtener un producto random:
+* Se implementa un script para correr el servidor:
 
-https://express-server-manu.glitch.me/productoRandom
+`npm run dev`
 
