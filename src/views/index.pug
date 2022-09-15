@@ -1,0 +1,15 @@
+extends layout.pug
+
+block content
+  .container-md
+      .mt-5.row.mx-auto
+        h1.mb-3 Ingreso Producto
+        form(method='post' action='/api/productos/' autocomplete='off')
+          .mb-3
+            input#inputTitle.form-control(placeholder='Nombre del producto' type='text' name='title')
+          .mb-3
+            input#inputPrice.form-control(placeholder='Precio del producto' type='text' name='price')
+          .mb-4
+            input#inputUrl.form-control(placeholder='URL de la imagen' type='text' name='thumbnail')
+          button.btn.btn-primary(type='submit') Enviar
+          a.btn.btn-primary.my-2.mx-2(href='/productos' role='button') Ir a la lista de productos

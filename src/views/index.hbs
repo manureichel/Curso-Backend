@@ -1,0 +1,36 @@
+<div class="container-md">
+  <div class="mt-5 row mx-auto ">
+      <h1 class="mb-3">Ingreso Producto</h1>
+      <form method="post" action="/api/productos/" autocomplete="off" >
+        <div class="mb-3">
+          <input
+            placeholder="Nombre del producto"
+            type="text"
+            class="form-control"
+            id="inputTitle"
+            name="title"
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            placeholder="Precio del producto"
+            type="text"
+            class="form-control"
+            id="inputPrice"
+            name="price"
+          />
+        </div>
+        <div class="mb-4">
+          <input
+            placeholder="URL de la imagen"
+            type="text"
+            class="form-control"
+            id="inputUrl"
+            name="thumbnail"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+        <a class="btn btn-primary my-2" href="/productos" role="button">Ir a la lista de productos</a>
+      </form>
+  </div>
+</div>

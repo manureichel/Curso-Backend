@@ -1,24 +1,20 @@
 # Curso-Backend
 
-## Entrega: API Restful
+## Entrega: Template Engines
 
-###Endpoints 
+El template que me pareció más interesante fue Pug, sobre todo por como se reduce bastante el código desde un HTML convencional. Pero es el que noto sería más complicado acostumbrarse a utilizar. Si tuviera que hacer algo ahora mismo con template engines, usaría Handlebars, por ser el más parcido a la sintaxis de HTML, y viniendo de Front End generaría más rápido plantillas. Pero espero la verdad no tener que hacerlo 😭.
 
-Se implementa una API Restful con los siguientes Endpoints:
+### Cambio de plantillas
 
-* **GET** '/api/productos' -> devuelve todos los productos.
-* **GET** '/api/productos/:id' -> devuelve un producto según su id.
-* **POST** '/api/productos' -> recibe y agrega un producto, y lo devuelve con su id asignado.
-* **PUT** '/api/productos/:id' -> recibe y actualiza un producto según su id.
-* **DELETE** '/api/productos/:id' -> elimina un producto según su id.
+Para cambiar de plantillas, en el archivo principal `index.js` se reemplaza el segundo argumento de la siguiente función por `hbs`, `pug` o `ejs` según corresponda.
 
-###Página para agregar productos
-
-Además se puede acceder a una página para agregar un producto nuevo desde http://localhost:3000/
+```javascript
+app.set("view engine", "hbs");
+```
 
 ### Iniciar el servidor
 
-* Se implementa un script para correr el servidor:
+* Se implementa un script para correr el servidor en entorno de desarrollo:
 
 `npm run dev`
 
