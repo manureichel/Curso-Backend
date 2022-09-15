@@ -10,7 +10,6 @@ router.get("/", (req, res) => {
 router.get("/productos", (req, res) => {
   products = productosService.getAllProducts();
   res.render("products", {
-    title: "Ver Productos",
     products,
     listExists: products.length > 0,
   });
