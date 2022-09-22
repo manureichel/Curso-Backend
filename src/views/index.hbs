@@ -1,7 +1,7 @@
-<div class="container-md">
+<div class="container-md d-flex">
   <div class="mt-5 row mx-auto ">
       <h1 class="mb-3">Ingreso Producto</h1>
-      <form method="post" action="/api/productos/" autocomplete="off" >
+      <form id="form-product" method="post" action="/api/productos/" autocomplete="off" >
         <div class="mb-3">
           <input
             placeholder="Nombre del producto"
@@ -29,8 +29,26 @@
             name="thumbnail"
           />
         </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
-        <a class="btn btn-primary my-2" href="/productos" role="button">Ir a la lista de productos</a>
+        <button
+          type="submit"
+          form="form-product"
+          class="btn btn-primary"
+        >Enviar</button>
       </form>
+      <div id="products-list"></div>   
   </div>
+  <div id="chat-box" class="mt-5 col-6">
+      <h1>Centro de mensajes</h1>
+      <form>
+        <div class="mb-3">
+          <label for="inputEmail" class="form-label">Ingrese su email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="inputEmail"
+            name="user"
+          />
+        </div>
+      </form>
+    </div>
 </div>
