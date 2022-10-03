@@ -16,8 +16,7 @@ const getProductById = (req, res) => {
 const addProduct = (req, res) => {
   const { body } = req;
   const product = productosService.addProduct(body);
-  res.status(200).send({ ...product }); // Antes enviaba el producto, para el desafío de template engines no.
-  res.status(200);
+  res.status(200).send({ ...product });
 };
 
 const updateProduct = (req, res) => {
