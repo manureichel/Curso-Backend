@@ -9,41 +9,41 @@ const indexRouter = require("./routes/index");
 const productosRouter = require("./routes/productosRoutes");
 
 const httpServer = new HTTPServer(app);
-const io = new SocketServer(httpServer);
+// const io = new SocketServer(httpServer);
 
-const { mensajes } = require("./store/indexContenedor");
-const Producto = require("./database/Producto");
+// const { mensajes } = require("./store/indexContenedor");
+// const Producto = require("./database/Producto");
 
 // Configuración para views
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "hbs");
+// app.set("views", path.join(__dirname, "views"));
+// app.set("view engine", "hbs");
 
-app.use(express.urlencoded({ extended: false }));
+// app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, "../public")));
+// app.use(express.static(path.join(__dirname, "../public")));
 
 app.use("/", indexRouter);
 app.use("/api/productos", productosRouter);
 
-let messagesContainer = [];
+// let messagesContainer = [];
 
-io.on("connection", async (socket) => {
-  const products = await Producto.getAllProducts();
-  socket.emit("products-channel", products);
+// io.on("connection", async (socket) => {
+//   const products = await Producto.getAllProducts();
+//   socket.emit("products-channel", products);
 
-  socket.on("newProduct-channel", (data) => {
-    console.log("Recibido: ", data);
-    io.emit("newProduct-channel", data);
-  });
+//   socket.on("newProduct-channel", (data) => {
+//     console.log("Recibido: ", data);
+//     io.emit("newProduct-channel", data);
+//   });
 
-  socket.on("newMessage-channel", async (data) => {
-    console.log("Recibido: ", data);
-    await mensajes.save(data);
-    messagesContainer = [...messagesContainer, data];
-    io.emit("newMessage-channel", data);
-  });
-});
+//   socket.on("newMessage-channel", async (data) => {
+//     console.log("Recibido: ", data);
+//     await mensajes.save(data);
+//     messagesContainer = [...messagesContainer, data];
+//     io.emit("newMessage-channel", data);
+//   });
+// });
 
 httpServer
   .listen(port, () => {
