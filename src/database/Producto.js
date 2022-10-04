@@ -17,7 +17,7 @@ const addProduct = (product) => {
     }
   });
 
-  product = { id: maxId + 1, ...product };
+  product = { id: maxId + 1, timeStamp: Date.now(), ...product };
   DB.push(product);
   return product;
 };
@@ -27,9 +27,12 @@ const updateProduct = (id, UpdatedProduct) => {
   if (index == -1) {
     return false;
   } else {
-    DB[index].title = UpdatedProduct.title;
-    DB[index].price = UpdatedProduct.price;
-    DB[index].thumbnail = UpdatedProduct.thumbnail;
+    DB[index].nombre = UpdatedProduct.nombre;
+    DB[index].precio = UpdatedProduct.precio;
+    DB[index].foto = UpdatedProduct.foto;
+    DB[index].descripcion = UpdatedProduct.descripcion;
+    DB[index].codigo = UpdatedProduct.codigo;
+    DB[index].stock = UpdatedProduct.stock;
     return true;
   }
 };

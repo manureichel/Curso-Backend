@@ -1,7 +1,9 @@
 # Curso-Backend
-## Entrega: Websockets
+## Primer entrega Proyecto Final.
 
-Se implementa con Websockets una tabla dinámica y chat.
+### Despliege en Glitch
+
+https://manu-1er-entrega.glitch.me/
 ### Iniciar el servidor
 
 * Script para correr el servidor:
