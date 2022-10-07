@@ -45,11 +45,11 @@ const deleteCart = (id) => {
 const deleteProduct = (id, id_prod) => {
   const cart = DB.find((cart) => cart.id == id);
   if (cart) {
-    const index = cart.products.findIndex((product) => product.id == id_prod);
+    const index = cart.productos.findIndex((product) => product.id == id_prod);
     if (index == -1) {
       return false;
     } else {
-      cart.products.splice(index, 1);
+      cart.productos.splice(index, 1);
       return true;
     }
   } else return false;
