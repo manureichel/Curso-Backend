@@ -5,6 +5,40 @@ const app = express();
 const path = require("path");
 const port = 3000;
 
+const knex = require("knex");
+const connection = require("../db.js");
+const db = knex(connection);
+
+// db.schema
+//   .createTable("usuarios", (table) => {
+//     table.increments("id");
+//     table.string("nombre");
+//     table.string("apellido");
+//     table.string("correo");
+//     table.integer("rango");
+//   })
+//   .then(() => {
+//     console.log("Tabla creada");
+//   })
+//   .catch((e) => {
+//     console.log("Error al crear la tabla", e);
+//   })
+//   .finally(() => {
+//     db.destroy();
+//   });
+
+const dato = db("usuarios")
+  .select("*")
+  .then((data) => {
+    console.table(data);
+  })
+  .catch((e) => {
+    console.log("Error al consultar la tabla", e);
+  })
+  .finally(() => {
+    db.destroy();
+  });
+
 const indexRouter = require("./routes/index");
 const productosRouter = require("./routes/productosRoutes");
 
