@@ -10,14 +10,7 @@ const getProductById = (id) => {
 };
 
 const addProduct = (product) => {
-  let maxId = 0;
-  DB.forEach((product) => {
-    if (product.id > maxId) {
-      maxId = product.id;
-    }
-  });
-
-  product = { id: maxId + 1, ...product };
+  product = { ...product };
   DB.push(product);
   return product;
 };

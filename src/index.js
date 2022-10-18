@@ -5,47 +5,13 @@ const app = express();
 const path = require("path");
 const port = 3000;
 
-const knex = require("knex");
-const connection = require("../db.js");
-const db = knex(connection);
-
-// db.schema
-//   .createTable("usuarios", (table) => {
-//     table.increments("id");
-//     table.string("nombre");
-//     table.string("apellido");
-//     table.string("correo");
-//     table.integer("rango");
-//   })
-//   .then(() => {
-//     console.log("Tabla creada");
-//   })
-//   .catch((e) => {
-//     console.log("Error al crear la tabla", e);
-//   })
-//   .finally(() => {
-//     db.destroy();
-//   });
-
-const dato = db("usuarios")
-  .select("*")
-  .then((data) => {
-    console.table(data);
-  })
-  .catch((e) => {
-    console.log("Error al consultar la tabla", e);
-  })
-  .finally(() => {
-    db.destroy();
-  });
-
 const indexRouter = require("./routes/index");
 const productosRouter = require("./routes/productosRoutes");
 
 const httpServer = new HTTPServer(app);
 const io = new SocketServer(httpServer);
 
-const { mensajes } = require("./store/indexContenedor");
+const { mensajes, productos } = require("./store/indexContenedor");
 const Producto = require("./database/Producto");
 
 // Configuración para views
@@ -63,11 +29,12 @@ app.use("/api/productos", productosRouter);
 let messagesContainer = [];
 
 io.on("connection", async (socket) => {
-  const products = await Producto.getAllProducts();
+  const products = await productos.getAll();
   socket.emit("products-channel", products);
 
-  socket.on("newProduct-channel", (data) => {
-    console.log("Recibido: ", data);
+  socket.on("newProduct-channel", async (data) => {
+    console.log("voy a mandar:", data);
+    await productos.save(data);
     io.emit("newProduct-channel", data);
   });
 
