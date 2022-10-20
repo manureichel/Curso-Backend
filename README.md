@@ -1,5 +1,26 @@
 # Curso-Backend
-## Entrega: Base de datos
+## Entrega: CRUD Mongo DB
+
+El archivo crudMongo.sh tiene las instrucciones utilizadas.
+
+### Levantar un contenedor de docker para MongoDB
+
+Crear y ejecutar el contenedor:
+
+```console
+docker run -d -p 27017:27017 --name=manuMongo mongo:latest
+```
+
+Ingreso al bash del contenedor:
+```console
+docker exec -it manuMongo bash
+```
+
+y luego, desde el bash del contenedor, accedo a la consola de mongo con:  
+  
+```console
+mongosh
+```
 
 ### Levantar un contenedor de docker para la base de datos MariaDB
   
